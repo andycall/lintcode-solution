@@ -22,7 +22,7 @@ class TreeNode {
         }
     }
 class BinaryTreeSerialization {
-    /**
+   /**
      * This method will be invoked first, you should design your own algorithm 
      * to serialize a binary tree which denote by a root node to a string which
      * can be easily deserialized by your own "deserialize" method later.
@@ -82,7 +82,7 @@ class BinaryTreeSerialization {
      */
     public TreeNode deserialize(String data) {
         // write your code here
-        if (data.equals("{}}")) {
+        if (data.equals("{}")) {
             return null;
         }
 
@@ -103,7 +103,7 @@ class BinaryTreeSerialization {
             }
             i++;
 
-            if (!strArr[i].equals("#")) {
+            if (i < strArr.length && !strArr[i].equals("#")) {
                 int val = Integer.parseInt(strArr[i]);
                 TreeNode newNode = new TreeNode(val);
                 tmp.right = newNode;
